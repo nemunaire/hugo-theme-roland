@@ -22,6 +22,18 @@
         <li><a href="{{.href | relLangURL}}">{{.title}}</a></li>
         {{ end }}
 
+        {{ if gt (len .Site.Home.AllTranslations) 1 }}
+        <div class="nav-item dropdown pr-1 pr-md-2 pr-lg-3 pr-xl-4">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ .Language }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {{ range .Site.Home.AllTranslations }}
+            <a href="{{ .Permalink }}" class="dropdown-item">{{ .Language }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
         {{ if .Site.Params.cta_nav }}
         <li>
           <a href="{{ .Site.Params.cta_nav_href | relLangURL }}" class="btn btn-primary">{{ .Site.Params.cta_nav_txt }}</a>
