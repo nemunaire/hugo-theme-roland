@@ -1,0 +1,16 @@
+<!-- Pagination -->
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<div style="clear: both">
+    {{ if $pag.HasPrev }}
+    <a class="btn btn-outline-primary float-left" href="{{ $pag.Prev.URL }}">
+      &larr; Articles plus récents
+    </a>
+    {{ end }}
+    {{ if $pag.HasNext }}
+    <a class="btn btn-outline-primary float-right" href="{{ $pag.Next.URL }}">
+      Articles plus anciens &rarr;
+    </a>
+    {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,31 @@
+<!-- post list -->
+{{ range $index, $element := $.Paginator.Pages }}
+<div class="post-preview my-4">
+    <a href="{{ .Permalink }}">
+        <h2 class="font-weight-bold h3 pb-1">
+            {{ .Title }}
+        </h2>
+	{{with .Params.subtitle }}
+        <p class="lead">
+            {{ . }}
+        </p>
+	{{ end }}
+        <div class="post-content-preview text-muted my-4">
+	{{ with .Description }}
+            {{ . }}
+        {{ else }}
+            {{ .Summary}}
+       {{ end }}
+        </div>
+    </a>
+    <p class="post-meta text-right">
+    Posté par {{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }} le {{ .Date.Format "2 Jan 2006" }}
+    <!-- Don't show "Last Modified on" if update happened on the same day. -->
+    {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02" .Lastmod) (dateFormat "2006-01-02" .Date)))) }}
+    <br>Mise à jour le {{ dateFormat "2 Jan 2006" .Params.LastMod }}
+    {{ end }}
+    </p>
+
+</div>
+<hr>
+{{ end }}

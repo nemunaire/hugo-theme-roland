@@ -1,0 +1,32 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-sm navbar-fixed-top">
+    <a class="navbar-brand" href="{{ "/" | relLangURL }}" title="{{ .Site.Title }}">
+      {{ partial "logo.html" . }}
+    </a>
+    <div class="navbar-collapse">
+      <div class="navbar-nav mr-auto"></div>
+      <form class="flex-grow-1 mx-3 mx-md-4 mx-lg-5 pr-3" onsubmit="return false;">
+        <input id="search-by" class="form-control" placeholder="Rechercher un article&hellip;">
+      </form>
+      <div class="navbar-nav mr-auto"></div>
+      <ul class="nav navbar-nav navbar-right">
+        {{ if not .Site.Params.omit_categories }}
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+        <li>
+          <a href="{{ "categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
+
+	{{ range .Site.Params.addtional_menus }}
+        <li><a href="{{.href | relLangURL}}">{{.title}}</a></li>
+        {{ end }}
+
+        {{ if .Site.Params.cta_nav }}
+        <li>
+          <a href="{{ .Site.Params.cta_nav_href | relLangURL }}" class="btn btn-primary">{{ .Site.Params.cta_nav_txt }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+</nav>

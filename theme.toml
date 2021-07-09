@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/spf13/hugoThemes#themetoml for an example
+
+name = "Roland"
+license = "Apache"
+licenselink = "https://github.com/nemunaire/hugo-theme-roland/blob/master/LICENSE"
+description = "A clean, elegant blog theme for hugo"
+homepage = "https://github.com/nemunaire/hugo-theme-roland"
+tags = [ "minimal", "responsive", "blog","light", "clean", "search"]
+features = ["site search", "responsive", "umami", "side bar"]
+min_version = 0.10
+
+[author]
+  name = "nemunaire"
+  homepage = "https://nemunai.re/"
