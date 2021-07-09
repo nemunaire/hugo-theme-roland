@@ -201,7 +201,7 @@
                 </ul>
 		<p class="copyright text-muted">
                     Copyright &copy; {{ .Site.Copyright }} {{ now.Year }} |
-                    <a href="https://www.armavirumque.fr/mentions-legales">Mentions légales</a>
+                    <a href="{{ .Site.Params.legal_href }}">{{ .Site.Params.legal_txt }}</a>
                 </p>
             </div>
         </div>
