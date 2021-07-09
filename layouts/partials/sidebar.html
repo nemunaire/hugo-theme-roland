@@ -28,7 +28,7 @@
     <!-- Short About -->
 	{{ if .Site.Params.about_me }}
     <section class="d-none d-lg-block">
-	<hr><h5 class="text-sc"><a href="{{ "/top/about" | relLangURL }}">À propos d'AVQ</a></h5>
+	<hr><h5 class="text-sc"><a href="{{ "/top/about" | relLangURL }}">{{ .Site.Params.about_txt }}</a></h5>
         <div class="short-about">
             {{ with .Site.Params.sidebar_avatar }}
             <div class="text-center">
