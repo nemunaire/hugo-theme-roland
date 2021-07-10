@@ -5,8 +5,9 @@
             <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
                 <ul class="list-inline text-center">
                    {{ if .Site.Params.social.rss }}
+                   {{ with .OutputFormats.Get "rss" -}}
                    <li class="list-inline-item">
-                       <a href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' rel="alternate" type="application/rss+xml" title="{{ .Site.Title | default "" }}" >
+                       <a href='{{ .RelPermalink }}' rel="alternate" type="application/rss+xml" title="{{ $.Site.Title | default "" }}" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
@@ -14,7 +15,8 @@
                        </a>
                    </li>
                    {{ end }}
-                    {{ with .Site.Params.social.email }}
+                   {{ end }}
+                   {{ with .Site.Params.social.email }}
                     <li class="list-inline-item">
                         <a href="mailto:{{ . }}">
                             <span class="fa-stack fa-lg">
