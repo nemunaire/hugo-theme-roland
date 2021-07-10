@@ -102,5 +102,7 @@
       })
     </script>
 
-    <script async defer data-website-id="55cc7d60-2443-45ac-ab74-21ece8d3b7ed" src="https://pythagore.p0m.fr/pythagore.js"></script>
+    {{ with .Site.Params.Umami }}
+    <script async defer data-website-id="{{ .website_id }}" src="//{{ .host }}/{{ .path | default "umami.js" }}"></script>
+    {{ end }}
 </head>
