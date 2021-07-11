@@ -91,6 +91,11 @@
     </script>
     <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
 
+    {{ with .Site.Params.Commento }}
+    <!-- Commento JavaScript -->
+    <script defer src="{{ .scheme | default "https" }}://{{ .host }}/{{ .path | default "js/commento.js" }}"></script>
+    {{ end }}
+
     <!-- Custom JS -->
     {{ range .Site.Params.custom_js }}
     <script src="{{ . | absURL }}"></script>
