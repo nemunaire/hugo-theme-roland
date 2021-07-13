@@ -10,15 +10,17 @@
         <div class="row">
             <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
                 <div class="post-heading">
-                    <div class="tags">
-                        {{ range .Params.tags }}
-                        <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">
-                            {{ . }}
+                    <h1 class="py-2">{{ .Title }}</h1>
+                    {{ with .Params.subtitle }}<h2 class="subheading py-2 h4">{{ . }}</h2>{{ end }}
+                    {{ with .Params.tags }}
+                    <div class="tags py-2">
+                        {{ range . }}
+                        <a class="badge badge-pill badge-light" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">
+                            #{{ . }}
                         </a>
                         {{ end }}
                     </div>
-                    <h1 class="py-2">{{ .Title }}</h1>
-                    <h2 class="subheading py-2 h4">{{ .Params.subtitle }}</h2>
+                    {{ end }}
                     <span class="meta">
                         Par
                         {{ if .Params.author }}
@@ -94,8 +96,8 @@
                         {{ $featured_condition_size := .Site.Params.featured_condition_size }}
                         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
                         {{ if gt (len $taxonomy.Pages) $featured_condition_size }}
-                        <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">
-                            {{ $name }}
+                        <a class="badge badge-pill badge-secondary" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">
+                            #{{ $name }}
                         </a>
                         {{ end }}
                         {{ end }}

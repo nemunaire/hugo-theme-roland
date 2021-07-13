@@ -5,7 +5,7 @@
         <div class="row">
             <!-- Post Container -->
             <div class="
-                col-xl-8 offset-xl-2
+                col-xl-7 offset-xl-1
                 col-lg-10 offset-lg-1
                 post-container">
 
@@ -21,8 +21,8 @@
                 <!-- Featured Tags -->
                 {{ if .Site.Params.featured_tags }}
                 <section>
-                    <hr class="d-none d-lg-block">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <hr class="d-block d-xl-none">
+                    <h5><a href="/tags/">Tags</a></h5>
                     <div class="tags">
                         {{ $featured_condition_size := .Site.Params.featured_condition_size }}
                         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}

@@ -1,0 +1,6 @@
+{{ define "main" }}
+  <div class="container">
+    <h2>Tag <span class="font-italic text-muted">#{{ .Data.Term }}</span></h2>
+  </div>
+  {{ partial "category.html" . }}
+{{ end }}
