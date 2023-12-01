@@ -68,12 +68,12 @@
                 <hr>
                 <div>
                     {{ if .PrevInSection }}
-                    <a class="mb-2 btn btn-outline-primary float-left" href="{{ .PrevInSection.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr;
+                    <a class="mb-2 btn btn-outline-primary float-left" href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr;
                       Article précédent
                     </a>
                     {{ end }}
                     {{ if .NextInSection }}
-                    <a class="mb-2 btn btn-outline-primary float-right" href="{{ .NextInSection.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title}}">
+                    <a class="mb-2 btn btn-outline-primary float-right" href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title}}">
                       Article suivant &rarr;
                     </a>
                     {{ end }}
