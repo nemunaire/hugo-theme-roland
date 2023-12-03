@@ -28,11 +28,11 @@
     <!-- Short About -->
 	{{ if .Site.Params.about_me }}
     <section class="d-none d-lg-block">
-	<hr><h5 class="text-sc"><a href="{{ "/top/about" | relLangURL }}">{{ .Site.Params.about_txt }}</a></h5>
+	<hr><h5 class="text-sc"><a href="{{ .Site.Params.about_link }}">{{ .Site.Params.about_txt }}</a></h5>
         <div class="short-about">
             {{ with .Site.Params.sidebar_avatar }}
-            <div class="text-center">
-              <a href="{{ "/top/about" | relLangURL }}">
+            <div class="text-center mb-2">
+              <a href="{{ $.Site.Params.about_link }}">
                <img src="{{ . | relURL }}" alt="avatar" style="cursor: pointer" />
               </a>
             </div>
