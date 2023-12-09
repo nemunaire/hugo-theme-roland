@@ -19,10 +19,10 @@
         </div>
     </a>
     <p class="post-meta text-right">
-    Posté par {{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }} le {{ .Date.Format "2 Jan 2006" }}
+      {{ i18n "posted_by" }} {{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }} {{ i18n "on" }} {{ .Date.Format (i18n "date_fmt") }}
     <!-- Don't show "Last Modified on" if update happened on the same day. -->
     {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02" .Lastmod) (dateFormat "2006-01-02" .Date)))) }}
-    <br>Mise à jour le {{ dateFormat "2 Jan 2006" .Params.LastMod }}
+    <br>{{ i18n "updated_on" }} {{ dateFormat (i18n "date_fmt") .Params.LastMod }}
     {{ end }}
     </p>
 

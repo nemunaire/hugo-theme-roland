@@ -1,0 +1,29 @@
+- id: prev_articles
+  translation: "Latest articles"
+
+- id: next_articles
+  translation: "Oldest articles"
+
+- id: prev_article
+  translation: "Previous article"
+
+- id: next_article
+  translation: "Next article"
+
+- id: toc
+  translation: "Table of Contents"
+
+- id: posted_by
+  translation: "Posted by"
+
+- id: updated_on
+  translation: "Last modified on"
+
+- id: by
+  translation: "By"
+
+- id: "on"
+  translation: "on"
+
+- id: "date_fmt"
+  translation: "Jan 2 2006"

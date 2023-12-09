@@ -4,12 +4,12 @@
 <div style="clear: both">
     {{ if $pag.HasPrev }}
     <a class="mb-2 btn btn-outline-primary float-left" href="{{ $pag.Prev.URL }}">
-      &larr; Articles plus récents
+      &larr; {{ i18n "prev_articles" }}
     </a>
     {{ end }}
     {{ if $pag.HasNext }}
     <a class="mb-2 btn btn-outline-primary float-right" href="{{ $pag.Next.URL }}">
-      Articles plus anciens &rarr;
+      {{ i18n "next_articles" }} &rarr;
     </a>
     {{ end }}
 </div>
