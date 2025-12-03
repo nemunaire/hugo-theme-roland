@@ -3,7 +3,7 @@
 <script src="{{ "js/iDisqus.js" | relURL }}"></script>
 <script>
 var disq = new iDisqus('disqus-comment', {
-    forum: '{{ .Site.DisqusShortname}}',
+    forum: '{{ site.Config.Services.Disqus.Shortname }}',
     api: '{{ .Site.Params.disqus_proxy }}',
 	site: '{{ .Site.Params.disqus_site }}',
     mode: 1,
@@ -11,7 +11,7 @@ var disq = new iDisqus('disqus-comment', {
     init: true
 });
 </script>
-{{ else if .Site.DisqusShortname }}
+{{ else if site.Config.Services.Disqus.Shortname }}
 <div id="disqus-comment"></div>
 {{ template "_internal/disqus.html" . }}
 {{ else if .Site.Params.Commento }}
